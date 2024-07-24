@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ONf-hU-hNx">
-                                <rect key="frame" x="16" y="59" width="361" height="759"/>
+                                <rect key="frame" x="16" y="100" width="361" height="718"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PKZ-al-LWi">
                                     <size key="itemSize" width="128" height="128"/>
@@ -26,23 +26,33 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYe-ND-62T">
+                                <rect key="frame" x="16" y="59" width="367" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="JYe-ND-62T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="2Df-gw-iEh"/>
                             <constraint firstItem="ONf-hU-hNx" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Fqn-Mg-pTO"/>
-                            <constraint firstItem="ONf-hU-hNx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Nga-9x-RXm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JYe-ND-62T" secondAttribute="trailing" constant="10" id="VId-CU-t5Z"/>
+                            <constraint firstItem="ONf-hU-hNx" firstAttribute="top" secondItem="JYe-ND-62T" secondAttribute="bottom" constant="5" id="e5u-h3-gY5"/>
                             <constraint firstItem="ONf-hU-hNx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fyd-Lj-6IO"/>
+                            <constraint firstItem="JYe-ND-62T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="g0Z-sm-heE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ONf-hU-hNx" secondAttribute="trailing" constant="16" id="joR-E7-p0K"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="xdK-u7-7im"/>
                     <connections>
                         <outlet property="leagueCollectionView" destination="ONf-hU-hNx" id="J8G-Hm-F6S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="90.839694656488547" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1017.5572519083969" y="3.5211267605633805"/>
         </scene>
     </scenes>
 </document>

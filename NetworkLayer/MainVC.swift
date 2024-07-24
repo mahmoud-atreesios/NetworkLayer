@@ -12,7 +12,7 @@ class MainVC: UIViewController{
     
     @IBOutlet weak var leagueCollectionView: UICollectionView!
     
-    var leaguesArray: [LeagueResults] = []
+    var moviesArray: [Movie] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class MainVC: UIViewController{
 //MARK: - fetch data
 extension MainVC{
     func fetchData(){
-        let url = URL(string: "https://apiv2.allsportsapi.com/football/?met=Leagues&APIkey=c7b61c6a0e2bba592fa669ec0da364ae2c51138a7eadb6edc13c539df70c30c6")
+        let url = URL(string: "https://api.themoviedb.org/3/trending/movie/day?api_key=4695f8fc3a83a2a282fe24823ac5b73a")
         let request = URLRequest(url: url!)
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
@@ -35,17 +35,17 @@ extension MainVC{
             
             do {
                 let decoder = JSONDecoder()
-                let leagues = try decoder.decode(Leagues.self, from: data!)
+                let movies = try decoder.decode(Movies.self, from: data!)
                 //print(leagues)
                 DispatchQueue.main.async {
-                    self.leaguesArray = leagues.result
+                    self.moviesArray = movies.results
                     self.leagueCollectionView.reloadData()
                 }
-                for league in self.leaguesArray{   //iterative loop on leagues because it is an array of dictionary(object)
-                    if let leagueName = league.league_name{
-                        print(leagueName)
-                    }
-                }
+//                for league in self.moviesArray{   //iterative loop on leagues because it is an array of dictionary(object)
+//                    if let leagueName = league.league_name{
+//                        print(leagueName)
+//                    }
+//                }
             }catch{
                 print(error.localizedDescription)
             }
@@ -57,17 +57,18 @@ extension MainVC{
 //MARK: - displaying data in the collectionview
 extension MainVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        leaguesArray.count
+        moviesArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = leagueCollectionView.dequeueReusableCell(withReuseIdentifier: "leagueCell", for: indexPath) as! LeagueCollectionViewCell
-        if let leagueLogo = leaguesArray[indexPath.row].league_logo{
-            cell.leagueImage.sd_setImage(with: URL(string: leagueLogo))
+        if let leagueLogo = moviesArray[indexPath.row].poster_path{
+            cell.leagueImage.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/w500/" + leagueLogo))
         }else{
             cell.leagueImage.image = UIImage(named: "defaultLeagueLogo")
         }
-        cell.leagueName.text = leaguesArray[indexPath.row].league_name
+        cell.leagueName.text = moviesArray[indexPath.row].title
+        cell.layer.cornerRadius = 10
         return cell
     }
 }
