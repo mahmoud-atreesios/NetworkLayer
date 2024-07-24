@@ -15,6 +15,7 @@
 		1C02DC412C507EA30076273E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C02DC402C507EA30076273E /* Assets.xcassets */; };
 		1C02DC442C507EA30076273E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C02DC422C507EA30076273E /* LaunchScreen.storyboard */; };
 		1C02DC4C2C507EC50076273E /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C02DC4B2C507EC50076273E /* Movies.swift */; };
+		1C69FAB72C517D9100E4A8C7 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C69FAB62C517D9100E4A8C7 /* DetailsVC.swift */; };
 		1C875C6D2C5083F000C1D6BC /* LeagueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C875C6B2C5083F000C1D6BC /* LeagueCollectionViewCell.swift */; };
 		1C875C6E2C5083F000C1D6BC /* LeagueCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C875C6C2C5083F000C1D6BC /* LeagueCollectionViewCell.xib */; };
 		1C875C712C50899A00C1D6BC /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1C875C702C50899A00C1D6BC /* SDWebImage */; };
@@ -31,6 +32,7 @@
 		1C02DC432C507EA30076273E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C02DC452C507EA30076273E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C02DC4B2C507EC50076273E /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
+		1C69FAB62C517D9100E4A8C7 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		1C875C6B2C5083F000C1D6BC /* LeagueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueCollectionViewCell.swift; sourceTree = "<group>"; };
 		1C875C6C2C5083F000C1D6BC /* LeagueCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeagueCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +71,7 @@
 				1C02DC342C507EA30076273E /* AppDelegate.swift */,
 				1C02DC362C507EA30076273E /* SceneDelegate.swift */,
 				1C02DC382C507EA30076273E /* MainVC.swift */,
+				1C69FAB62C517D9100E4A8C7 /* DetailsVC.swift */,
 				1C02DC4B2C507EC50076273E /* Movies.swift */,
 				1C875C6A2C5083C700C1D6BC /* MovieCell */,
 				1C02DC3A2C507EA30076273E /* Main.storyboard */,
@@ -171,6 +174,7 @@
 				1C875C6D2C5083F000C1D6BC /* LeagueCollectionViewCell.swift in Sources */,
 				1C02DC392C507EA30076273E /* MainVC.swift in Sources */,
 				1C02DC352C507EA30076273E /* AppDelegate.swift in Sources */,
+				1C69FAB72C517D9100E4A8C7 /* DetailsVC.swift in Sources */,
 				1C02DC372C507EA30076273E /* SceneDelegate.swift in Sources */,
 				1C02DC4C2C507EC50076273E /* Movies.swift in Sources */,
 			);

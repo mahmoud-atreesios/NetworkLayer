@@ -23,9 +23,9 @@ class MainVC: UIViewController{
 }
 
 //MARK: - fetch data
-extension MainVC{
-    func fetchData(){
-        let url = URL(string: "https://api.themoviedb.org/3/trending/movie/day?api_key=4695f8fc3a83a2a282fe24823ac5b73a")
+extension MainVC{       //https://api.themoviedb.org/3/trending/movie/day?api_key=4695f8fc3a83a2a282fe24823ac5b73a
+    func fetchData(){ //https://api.themoviedb.org/3/movie/popular?api_key=4695f8fc3a83a2a282fe24823ac5b73a
+        let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=4695f8fc3a83a2a282fe24823ac5b73a")
         let request = URLRequest(url: url!)
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
@@ -71,6 +71,16 @@ extension MainVC: UICollectionViewDataSource, UICollectionViewDelegate {
         cell.layer.cornerRadius = 10
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "DetailsVC") as? DetailsVC {
+            // Pass the selected movie to the details view controller
+            vc.selectedMovie = moviesArray[indexPath.row]
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
 }
 
 //MARK: - intail setup
