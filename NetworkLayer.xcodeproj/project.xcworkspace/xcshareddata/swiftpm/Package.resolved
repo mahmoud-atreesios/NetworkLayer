@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "sdwebimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImage.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "cba8ec966758e0193f9cc3d231dd4e7ef8dfcfb8"
+      }
+    }
+  ],
+  "version" : 2
+}
