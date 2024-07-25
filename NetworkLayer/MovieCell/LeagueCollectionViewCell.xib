@@ -33,6 +33,19 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYW-4z-Bao">
+                        <rect key="frame" x="141" y="3" width="26" height="27"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="27" id="A8F-9x-SW9"/>
+                            <constraint firstAttribute="width" constant="26" id="HLw-oB-MSX"/>
+                        </constraints>
+                        <color key="tintColor" red="0.96841138599999999" green="0.89298034699999995" blue="0.37871703750000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                        <connections>
+                            <action selector="favouriteButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="A6I-1k-OAx"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -43,14 +56,20 @@
                 <constraint firstItem="Mm9-kr-Ntg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="LgY-ND-7W2"/>
                 <constraint firstAttribute="trailing" secondItem="My1-q1-TAt" secondAttribute="trailing" id="OWF-GO-KjX"/>
                 <constraint firstItem="My1-q1-TAt" firstAttribute="top" secondItem="Mm9-kr-Ntg" secondAttribute="bottom" id="PZW-ov-jxp"/>
+                <constraint firstItem="GYW-4z-Bao" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="3" id="TzA-go-xpZ"/>
                 <constraint firstAttribute="trailing" secondItem="Mm9-kr-Ntg" secondAttribute="trailing" id="hgi-8n-P2j"/>
+                <constraint firstAttribute="trailing" secondItem="GYW-4z-Bao" secondAttribute="trailing" constant="3" id="rWh-ry-r4O"/>
                 <constraint firstAttribute="bottom" secondItem="My1-q1-TAt" secondAttribute="bottom" id="uGz-BY-obz"/>
             </constraints>
             <connections>
+                <outlet property="favouriteButton" destination="GYW-4z-Bao" id="H9E-5X-dli"/>
                 <outlet property="leagueImage" destination="Mm9-kr-Ntg" id="Yjp-PS-era"/>
                 <outlet property="leagueName" destination="My1-q1-TAt" id="xUS-vp-pXk"/>
             </connections>
             <point key="canvasLocation" x="138.93129770992365" y="19.718309859154932"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
+    </resources>
 </document>

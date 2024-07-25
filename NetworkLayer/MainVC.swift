@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import CoreData
 
 class MainVC: UIViewController{
     
@@ -20,6 +21,14 @@ class MainVC: UIViewController{
         intailSetUp()
         fetchData()
     }
+    
+    @IBAction func favouriteVcButtonPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "FavouritesVC") as? FavouritesVC {
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
 }
 
 //MARK: - fetch data
@@ -68,6 +77,8 @@ extension MainVC: UICollectionViewDataSource, UICollectionViewDelegate {
             cell.leagueImage.image = UIImage(named: "defaultLeagueLogo")
         }
         cell.leagueName.text = moviesArray[indexPath.row].title
+        cell.movie = moviesArray[indexPath.row]
+        cell.checkIfFavourite()
         cell.layer.cornerRadius = 10
         return cell
     }
@@ -90,4 +101,21 @@ extension MainVC{
         leagueCollectionView.delegate = self
         leagueCollectionView.register(UINib(nibName: "LeagueCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "leagueCell")
     }
+    
+    func deleteAllFavouriteMovies(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest =  NSFetchRequest<NSManagedObject>(entityName: "FavouriteMovies")
+        
+        do{
+            let movies = try context.fetch(fetchRequest)
+            context.delete(movies[0])
+            try context.save()
+            print("deleted successfully")
+        }catch{
+            print("errroror")
+        }
+    }
+    
 }
