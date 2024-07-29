@@ -75,6 +75,7 @@
 				1C02DC342C507EA30076273E /* AppDelegate.swift */,
 				1C02DC362C507EA30076273E /* SceneDelegate.swift */,
 				1C02DC382C507EA30076273E /* MainVC.swift */,
+				1C5AB9162C57472600BC9E0D /* LoginVC.swift */,
 				1C69FAB62C517D9100E4A8C7 /* DetailsVC.swift */,
 				1C5405C42C52C0BA0080E02E /* FavouritesVC.swift */,
 				1C02DC4B2C507EC50076273E /* Movies.swift */,
@@ -84,7 +85,6 @@
 				1C02DC422C507EA30076273E /* LaunchScreen.storyboard */,
 				1C02DC452C507EA30076273E /* Info.plist */,
 				1C02DC3D2C507EA30076273E /* NetworkLayer.xcdatamodeld */,
-				1C5AB9162C57472600BC9E0D /* LoginVC.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";

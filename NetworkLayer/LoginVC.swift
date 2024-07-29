@@ -21,6 +21,8 @@ class LoginVC: UIViewController {
         if let uaserName = userName.text , let password = password.text{
             let userCredntials = verifyUser(userName: uaserName, password: password)
             if userCredntials{
+                let userDefaults = UserDefaults.standard
+                userDefaults.set(true, forKey: "loginState")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 if let vc = storyboard.instantiateViewController(withIdentifier: "MainVC") as? MainVC {
                     self.present(vc, animated: true, completion: nil)
@@ -31,7 +33,6 @@ class LoginVC: UIViewController {
         }
         
     }
-    
 }
 
 extension LoginVC{
